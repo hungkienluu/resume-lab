@@ -1,0 +1,153 @@
+{
+  "profile": {
+    "name": "Hung Kien Luu",
+    "title": "Product Leader, AI-Native Builder",
+    "location": "San Francisco, CA",
+    "phone": "redacted",
+    "email": "redacted",
+    "linkedin": "https://linkedin.com/in/hungkienluu",
+    "website": "https://hungkienluu.com",
+    "summary": "Product leader building AI-enabled systems across payments and vertical SaaS. 0-to-1 builder and scale operator, most recently Head of Product for Square's Local Services vertical at $100B+ gross payments volume (GPV) scale. Pairs retention and growth work with AI-powered execution that compresses discovery cycles and increases decision velocity.",
+    "positioning": "Operator at scale + AI-native builder + fast execution system"
+  },
+  "heroMetrics": [
+    "$100B+ GPV portfolio scope",
+    "1M+ active sellers",
+    "$1B+ annualized non-card bank payment volume"
+  ],
+  "themes": [
+    "AI systems and productization",
+    "Vertical SaaS and payments workflows",
+    "Retention, attach, and growth systems"
+  ],
+  "experience": [
+    {
+      "company": "Square (Block, Inc.)",
+      "role": "Head of Product, Local Services Vertical",
+      "location": "San Francisco, CA",
+      "dates": "July 2018 - February 2026",
+      "subroles": [
+        {
+          "name": "Product Lead, Local Services Audience",
+          "dates": "2024-2026",
+          "description": "Led product strategy for Square's largest seller segment (Health & Beauty, Home Services, Professional Services), owning multi-surface workflows across Invoices, Appointments, Estimates, Contracts, Projects, POS Services/Bookings modes, and seller lifecycle growth.",
+          "bullets": [
+            "Owned a $100B+ GPV portfolio across 1M+ active sellers, with scope expansion in 2025 to include Health & Beauty and Appointments.",
+            "Led 4 senior PMs and coordinated a 100+ person cross-functional team at peak; built an internal AI PM Second Brain to automate context ingestion and daily briefs.",
+            "Improved seller retention with statistical significance, contributing to retained and expanded GPV; operationalized AI agents for feedback ingestion and triage.",
+            "Shipped and scaled non-card bank payment flows (discovery -> checkout -> settlement -> reconciliation) to $1B+ annualized volume.",
+            "Increased software attach by shipping an end-to-end local services suite (Inquiry -> Estimate -> Booking -> Contract -> Invoice -> Payment).",
+            "Shipped and tested a voice AI intake and quoting agent with evaluation criteria, quality thresholds, and human handoff rules."
+          ]
+        },
+        {
+          "name": "Senior Product Manager, Invoices & Payments",
+          "dates": "2018-2024",
+          "bullets": [
+            "Scaled Invoices ~10x into one of Square's top revenue product areas, growing into a $2xxM revenue business unit.",
+            "Expanded Invoices into a services workflow suite (Estimates, Contracts, Projects) plus job pipeline orchestration.",
+            "Introduced early AI-assisted quoting and invoicing features to explore automation of service sales and payment workflows."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Upwork",
+      "role": "Senior Product Manager",
+      "location": "San Francisco, CA",
+      "dates": "October 2015 - July 2018",
+      "bullets": [
+        "Led PM for iOS and Android apps connecting business clients with freelancers; improved new mobile client conversion 4x.",
+        "Shipped applicant tracking, freelancer and job search, and onboarding; helped drive company-wide mobile-first transformation."
+      ]
+    },
+    {
+      "company": "Pac-12 Networks",
+      "role": "Product Manager",
+      "location": "San Francisco, CA",
+      "dates": "November 2013 - October 2015",
+      "summary": "Led PM for Pac-12 mobile app, Pac-12.com, and International; increased engagement 50%+."
+    },
+    {
+      "company": "Scoutmore",
+      "role": "CEO & Co-Founder",
+      "location": "San Francisco, CA",
+      "dates": "July 2012 - November 2013",
+      "summary": "Built and shipped a travel app marketplace for user-generated itineraries using lean startup methods."
+    },
+    {
+      "company": "Cisco Systems",
+      "role": "Corporate Development Associate",
+      "location": "San Jose, CA",
+      "dates": "July 2010 - September 2012",
+      "summary": "Led acquisitions and strategic investments for the Collaboration Software business unit; executed an acquisition integrated into Cisco WebEx Teams."
+    },
+    {
+      "company": "Merrill Lynch",
+      "role": "Investment Banking Analyst",
+      "location": "Palo Alto, CA",
+      "dates": "July 2008 - July 2010",
+      "summary": "Completed 8 transactions (IPO, M&A, debt financings) valued at $8.6B+."
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "AI PM Second Brain",
+      "problem": "High coordination overhead and context switching slowed decision cycles across a large cross-functional organization.",
+      "approach": "Built internal AI workflows for context ingestion, daily brief generation, and opportunity triage.",
+      "outcome": "Reduced work about the work and increased decision velocity for PM and partner teams."
+    },
+    {
+      "title": "Non-Card Bank Payments at Scale",
+      "problem": "Service businesses needed lower-cost, more flexible payment rails beyond cards.",
+      "approach": "Shipped end-to-end flows across discovery, checkout, settlement, and reconciliation.",
+      "outcome": "Scaled to $1B+ annualized volume with strong growth trajectory."
+    },
+    {
+      "title": "Local Services Workflow Suite",
+      "problem": "Sellers lacked integrated software across the full service lifecycle.",
+      "approach": "Delivered a connected suite from inquiry to payment across web, mobile, and POS.",
+      "outcome": "Improved software attach and created a stronger retention engine."
+    }
+  ],
+  "skills": {
+    "AI Systems": [
+      "Voice AI workflows",
+      "LLM productization",
+      "Human-in-the-loop design",
+      "Eval-aware iteration",
+      "Retrieval and context systems",
+      "AI-assisted automation"
+    ],
+    "Product": [
+      "0-to-1 strategy",
+      "Multi-surface design",
+      "Product-led growth systems",
+      "Vertical SaaS transformation"
+    ],
+    "Payments & Infra": [
+      "Non-card payment strategy (ACH, Zelle, Bitcoin, BNPL)",
+      "Risk-aware product design",
+      "Compliance-conscious systems"
+    ],
+    "Technical": [
+      "SQL",
+      "Snowflake",
+      "Next.js",
+      "API design",
+      "A/B experimentation systems"
+    ],
+    "Languages": [
+      "Cantonese",
+      "Vietnamese",
+      "Mandarin",
+      "Spanish"
+    ]
+  },
+  "education": {
+    "school": "University of Southern California",
+    "degree": "B.S. Business Administration (Financial Analysis & Valuation)",
+    "minor": "Biotechnology",
+    "year": "2008"
+  }
+}
