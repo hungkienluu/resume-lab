@@ -248,7 +248,7 @@ const renderSite = () => `<!doctype html>
 
     <footer class="footer">
       <span>Resume Lab v1: single source, multi-format output</span>
-      <span><a href="resume-ats.html">ATS Resume</a> · <a href="resume-modern.html">Modern Resume</a> · <a href="resume-slides.html">Slides</a></span>
+      <span><a href="resume-ats.html">ATS Resume</a> · <a href="resume-modern.html">Modern Resume</a> · <a href="resume-slides.html">Slides</a> · <a href="resume-docusign.html">DocuSign Style</a></span>
     </footer>
   </main>
 </body>
@@ -416,11 +416,320 @@ const renderSlides = () => `<!doctype html>
 </body>
 </html>`;
 
+const renderDocusignStyle = () => `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${esc(data.profile.name)} | Agreement-Grade Resume</title>
+  <meta name="description" content="${esc(data.profile.summary)}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cobalt: #4c00ff;
+      --inkwell: #130032;
+      --violet: #26065d;
+      --mist: #cbc2ff;
+      --ecru: #f8f3f0;
+      --white: #ffffff;
+      --poppy: #ff5252;
+      --line: #ded6ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--inkwell);
+      background:
+        radial-gradient(1200px 420px at 100% -20%, rgba(203, 194, 255, 0.7) 0%, rgba(203, 194, 255, 0) 60%),
+        linear-gradient(180deg, #ffffff 0%, var(--ecru) 100%);
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .shell { max-width: 1140px; margin: 24px auto 48px; padding: 0 16px; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+    }
+    .brand b { color: var(--cobalt); }
+    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--violet);
+      text-decoration: none;
+      background: var(--white);
+    }
+    .hero {
+      border-radius: 24px;
+      padding: 30px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 82, 82, 0.16), rgba(255, 82, 82, 0) 45%),
+        linear-gradient(145deg, var(--cobalt) 0%, var(--violet) 70%, var(--inkwell) 100%);
+      box-shadow: 0 20px 64px rgba(19, 0, 50, 0.35);
+    }
+    .hero-label {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 14px 0 8px;
+      font-size: clamp(36px, 8vw, 76px);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
+    }
+    .tagline {
+      margin: 0;
+      font-size: clamp(18px, 3vw, 28px);
+      max-width: 860px;
+      color: #ece8ff;
+      font-weight: 500;
+    }
+    .hero-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .hero-metric {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fbfaff;
+    }
+    .grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 16px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--white);
+      padding: 22px;
+    }
+    .section-title {
+      margin: 0 0 14px;
+      color: var(--cobalt);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.09em;
+      font-weight: 800;
+    }
+    .role-card {
+      border: 1px solid #ebe5ff;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 10px;
+      background: linear-gradient(180deg, #fff 0%, #fbf9ff 100%);
+    }
+    .role-card:last-child { margin-bottom: 0; }
+    .company {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+    }
+    .company h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--inkwell);
+    }
+    .dates {
+      font-size: 12px;
+      color: #5f4a95;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .role {
+      margin: 4px 0;
+      font-weight: 700;
+      color: var(--violet);
+      font-size: 14px;
+    }
+    .meta {
+      margin: 0 0 8px;
+      color: #5f4a95;
+      font-size: 13px;
+    }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin-bottom: 6px; }
+    .stack { display: grid; gap: 10px; }
+    .mini {
+      border: 1px solid #e8ddff;
+      border-radius: 14px;
+      padding: 12px;
+      background: #fcfbff;
+    }
+    .mini h4 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: var(--inkwell);
+    }
+    .mini p {
+      margin: 0;
+      font-size: 14px;
+      color: #453276;
+    }
+    .cta {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      border-radius: 999px;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--cobalt); color: #fff; }
+    .btn-secondary { background: #fff; color: var(--violet); border-color: #d7cbff; }
+    .note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #6b5998;
+    }
+    .footer {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 12px;
+      color: #5d4b8f;
+      background: linear-gradient(180deg, #fff 0%, #f7f3ff 100%);
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .company { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="nav">
+      <div class="brand"><b>resume</b>lab / docusign-inspired</div>
+      <nav class="nav-links">
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#case-studies">Case Studies</a>
+        <a class="pill" href="#skills">Skills</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="hero-label">${esc(data.profile.title)}</span>
+      <h1>${esc(data.profile.name)}</h1>
+      <p class="tagline">${esc(data.profile.positioning)}</p>
+      <p class="tagline" style="font-size:16px;margin-top:8px;">${esc(data.profile.summary)}</p>
+      <div class="hero-grid">${data.heroMetrics.map((m) => `<div class="hero-metric">${esc(m)}</div>`).join('')}</div>
+    </section>
+
+    <section class="grid">
+      <article class="panel" id="experience">
+        <p class="section-title">Experience</p>
+        ${data.experience.map((exp) => `
+          <div class="role-card">
+            <div class="company">
+              <h3>${esc(exp.company)}</h3>
+              <span class="dates">${esc(exp.dates)}</span>
+            </div>
+            <p class="role">${esc(exp.role)}</p>
+            <p class="meta">${esc(exp.location)}</p>
+            ${exp.subroles ? exp.subroles.map((s) => `
+              <p class="role">${esc(s.name)} (${esc(s.dates)})</p>
+              ${s.description ? `<p>${esc(s.description)}</p>` : ''}
+              ${s.bullets ? list(s.bullets.slice(0, 3)) : ''}
+            `).join('') : exp.bullets ? list(exp.bullets.slice(0, 3)) : `<p>${esc(exp.summary || '')}</p>`}
+          </div>
+        `).join('')}
+      </article>
+
+      <aside class="stack">
+        <section class="panel" id="case-studies">
+          <p class="section-title">Case Studies</p>
+          ${data.caseStudies.map((c) => `
+            <div class="mini">
+              <h4>${esc(c.title)}</h4>
+              <p><strong>Problem:</strong> ${esc(c.problem)}</p>
+              <p><strong>Outcome:</strong> ${esc(c.outcome)}</p>
+            </div>
+          `).join('')}
+        </section>
+
+        <section class="panel" id="skills">
+          <p class="section-title">Skills</p>
+          ${Object.entries(data.skills).map(([group, skills]) => `
+            <div class="mini">
+              <h4>${esc(group)}</h4>
+              <p>${esc(skills.join(' · '))}</p>
+            </div>
+          `).join('')}
+        </section>
+
+        <section class="panel">
+          <p class="section-title">Contact</p>
+          <div class="mini">
+            <h4>${esc(data.profile.location)}</h4>
+            <p>${esc(data.profile.email)}</p>
+            <p>${esc(data.profile.phone)}</p>
+            <p><a href="${esc(data.profile.linkedin)}">${esc(data.profile.linkedin)}</a></p>
+          </div>
+          <div class="cta">
+            <a class="btn btn-primary" href="${esc(data.profile.linkedin)}">Connect on LinkedIn</a>
+            <a class="btn btn-secondary" href="resume-modern.html">Open 1-Page Resume</a>
+          </div>
+          <p class="note">Public version uses redacted direct contact fields by design.</p>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      DocuSign-inspired variant using brand-adjacent palette and contrast patterns, generated from the same canonical resume source.
+    </footer>
+  </div>
+</body>
+</html>`;
+
 const files = {
   'index.html': renderSite(),
   'resume-ats.html': renderOnePage({ modern: false }),
   'resume-modern.html': renderOnePage({ modern: true }),
-  'resume-slides.html': renderSlides()
+  'resume-slides.html': renderSlides(),
+  'resume-docusign.html': renderDocusignStyle()
 };
 
 for (const [name, html] of Object.entries(files)) {
